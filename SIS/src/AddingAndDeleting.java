@@ -10,6 +10,7 @@ public class AddingAndDeleting
 
 		public static void addingAndDeleting()
 		{
+			//fixing caden maybe <3 luv u king
 			
 			//Variables to recieve from the user before adding them to an object.
 			
