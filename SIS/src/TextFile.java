@@ -15,6 +15,12 @@ public class TextFile
 				{
 					String line = studentList.nextLine();
 					String[] data = line.split(" ");
+					System.out.println(data.length);
+//					if (data.length == 8)
+//						{
+//							directory.add(new Student(data));
+//						}
+				
 
 					
 				}
