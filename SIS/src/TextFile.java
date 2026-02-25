@@ -9,10 +9,14 @@ public class TextFile
 		{
 			Scanner studentList = new Scanner(new File("StudentList.txt"));
 			
+			ArrayList<Student> directory = new ArrayList<Student>();
+			
 			while (studentList.hasNext())
 				{
 					String line = studentList.nextLine();
-					System.out.println(line);
+					String[] data = line.split(" ");
+
+					
 				}
 		}
-	}
+}
