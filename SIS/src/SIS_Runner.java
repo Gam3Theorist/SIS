@@ -10,7 +10,9 @@ public class SIS_Runner
 		public static void main(String[] args)
 			{
 			//System.out.println(new java.io.File("StudentList.txt").getAbsolutePath());
-				try {
+			// Do not delete the following lines; they are necessary for us to use the textFile() method
+				try 
+				{
 					TextFile.textFile();
 				}
 				catch (IOException exc)

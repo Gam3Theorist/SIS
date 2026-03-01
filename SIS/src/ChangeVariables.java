@@ -10,7 +10,8 @@ public class ChangeVariables
 		static String newClass;
 		static String initialClassGrade;
 		static String newClassGrade;
-	// This class is used to change student grades and schedules 
+	// This class is used to change student grades and schedules
+	// changeClass() functions properly
 		static Scanner userInput = new Scanner(System.in);
 		static Scanner userIntInput = new Scanner(System.in);
 			{

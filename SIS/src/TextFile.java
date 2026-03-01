@@ -17,7 +17,7 @@ public class TextFile
 				{
 					String line = studentList.nextLine();
 					String[] data = line.split(" ");
-					//System.out.println(data.length);
+					//System.out.println(data.length); Grace, this code is excellent
 
 					directory.add(new Student(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], 0.0, 1, 2, 3));
 				}
