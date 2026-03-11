@@ -8,13 +8,13 @@ public class gpaCalculator
 		public static void gpaCalculator()
 		{
 
-for(int i=0; i<TextFile.directory.size();i++)
+for(int i=0; i<TextFile.directory.size();i++) 
 {
-	tempGrade.equals(TextFile.directory.get(i).getFirstGrade());
+	tempGrade=(TextFile.directory.get(i).getFirstGrade());
 	letterToGradeConverter();
-	tempGrade.equals(TextFile.directory.get(i).getSecondGrade());
+	tempGrade=(TextFile.directory.get(i).getSecondGrade());
 	letterToGradeConverter();
-	tempGrade.equals(TextFile.directory.get(i).getThirdGrade());
+	tempGrade=(TextFile.directory.get(i).getThirdGrade());
 	letterToGradeConverter();
 	
 	gpa= gpa/3;

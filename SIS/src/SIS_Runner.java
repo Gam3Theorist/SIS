@@ -1,5 +1,8 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.IOException; 
+
 public class SIS_Runner
 	{
 	
@@ -7,7 +10,7 @@ public class SIS_Runner
 	static int changeSelection;
 	static Scanner masterInput = new Scanner(System.in);
 
-		public static void main(String[] args)
+		public static void main(String[] args)  throws IOException
 			{
 			// System.out.println(new java.io.File("StudentList.txt").getAbsolutePath());
 			// Don't delete the following lines; they are necessary for us to use the textFile() method
