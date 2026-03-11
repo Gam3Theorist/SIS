@@ -8,14 +8,14 @@ public class ChangeVariables
 		static int secondGrade;
 		static int thirdGrade;
 		static int studentClassChange;
-		static int firstClass;
+		static int periodToChange;  //Changed firstClass to periodToChange
 		static int secondClass;
 		static String changeGrade;
 		static String initialClass;
 		static String newClass;
 		static String initialClassGrade;
 		static String newClassGrade;
-		static int gradeToChange;
+		
 		
 	// This class is used to change student grades and schedules
 	// changeClass() now functions properly
@@ -52,38 +52,40 @@ public class ChangeVariables
 						
 							
 								System.out.println("Please enter the period number of the class you wish to change.");
-								firstClass = userIntInput.nextInt();
-								if (firstClass == 1)
+								periodToChange = userIntInput.nextInt();
+								if (periodToChange == 1)
 								{
 								initialClass = TextFile.directory.get(studentGradeChange).getFirstPeriod();
 								initialClassGrade = TextFile.directory.get(studentGradeChange).getFirstGrade();
 								}
-								else if (firstClass == 2)
+								else if (periodToChange == 2)
 								{
 								initialClass = TextFile.directory.get(studentGradeChange).getSecondPeriod();
 								initialClassGrade = TextFile.directory.get(studentGradeChange).getSecondGrade();
 								}
-								else if (firstClass == 3) 
+								else if (periodToChange == 3) 
 								{
 								initialClass = TextFile.directory.get(studentGradeChange).getThirdPeriod();
 								initialClassGrade = TextFile.directory.get(studentGradeChange).getThirdGrade();
 								}
 								System.out.println("Please select a new letter grade for the period you have selected");
 								changeGrade = userStringInput.nextLine();
-								//TextFile.directory.get(studentGradeChange).setFirstGrade(changeGrade);
+							
+							
 								
-								if(gradeToChange == 1 )
+								if(periodToChange == 1 )
 									{
 										TextFile.directory.get(studentGradeChange).setFirstGrade(changeGrade);
 									}
-								else if(gradeToChange == 2)
+								else if(periodToChange == 2)
 									{
 										TextFile.directory.get(studentGradeChange).setSecondGrade(changeGrade);
 									}		
-								else if(gradeToChange == 3)
+								else if(periodToChange == 3)
 									{
 										TextFile.directory.get(studentGradeChange).setThirdGrade(changeGrade);
 									}
+								System.out.println(TextFile.directory.get(studentGradeChange).getThirdGrade());
 								System.out.println("The Grade for " + TextFile.directory.get(studentGradeChange).getFirstName() + " " + TextFile.directory.get(studentGradeChange).getLastName() + " is now:");
 								System.out.println("Period 1: " + TextFile.directory.get(studentGradeChange).getFirstPeriod() + ": " + TextFile.directory.get(studentGradeChange).getFirstGrade());
 								System.out.println("Period 2: " + TextFile.directory.get(studentGradeChange).getSecondPeriod() + ": " + TextFile.directory.get(studentGradeChange).getSecondGrade());
@@ -137,18 +139,18 @@ public class ChangeVariables
 				System.out.println("Period 3: " + TextFile.directory.get(studentClassChange).getThirdPeriod() + ": " + TextFile.directory.get(studentClassChange).getThirdGrade());
 				
 				System.out.println("Please enter the period number of the class you wish to change.");
-				firstClass = userIntInput.nextInt();
-				if (firstClass == 1)
+				periodToChange = userIntInput.nextInt();
+				if (periodToChange == 1)
 				{
 				initialClass = TextFile.directory.get(studentClassChange).getFirstPeriod();
 				initialClassGrade = TextFile.directory.get(studentClassChange).getFirstGrade();
 				}
-				else if (firstClass == 2)
+				else if (periodToChange == 2)
 				{
 				initialClass = TextFile.directory.get(studentClassChange).getSecondPeriod();
 				initialClassGrade = TextFile.directory.get(studentClassChange).getSecondGrade();
 				}
-				else if (firstClass == 3) 
+				else if (periodToChange == 3) 
 				{
 				initialClass = TextFile.directory.get(studentClassChange).getThirdPeriod();
 				initialClassGrade = TextFile.directory.get(studentClassChange).getThirdGrade();
@@ -156,7 +158,7 @@ public class ChangeVariables
 				
 				System.out.println("Please enter the period number of the class you wish to switch with the first class you selected.");
 				secondClass = userIntInput.nextInt();
-				if (secondClass == 1 && firstClass == 2)
+				if (secondClass == 1 && periodToChange == 2)
 				{
 				newClass = TextFile.directory.get(studentClassChange).getFirstPeriod();
 				TextFile.directory.get(studentClassChange).setSecondPeriod(newClass);
@@ -166,7 +168,7 @@ public class ChangeVariables
 				TextFile.directory.get(studentClassChange).setFirstPeriod(initialClass);
 				TextFile.directory.get(studentClassChange).setFirstGrade(initialClassGrade);
 				}
-				else if (secondClass == 1 && firstClass == 3)
+				else if (secondClass == 1 && periodToChange == 3)
 				{
 				newClass = TextFile.directory.get(studentClassChange).getFirstPeriod();
 				TextFile.directory.get(studentClassChange).setThirdPeriod(newClass);
@@ -176,7 +178,7 @@ public class ChangeVariables
 				TextFile.directory.get(studentClassChange).setFirstPeriod(initialClass);
 				TextFile.directory.get(studentClassChange).setFirstGrade(initialClassGrade);
 				}
-				else if (secondClass == 2 && firstClass == 1)
+				else if (secondClass == 2 && periodToChange == 1)
 				{
 				newClass = TextFile.directory.get(studentClassChange).getSecondPeriod();
 				TextFile.directory.get(studentClassChange).setFirstPeriod(newClass);
@@ -186,7 +188,7 @@ public class ChangeVariables
 				TextFile.directory.get(studentClassChange).setSecondPeriod(initialClass);
 				TextFile.directory.get(studentClassChange).setSecondGrade(initialClassGrade);
 				}
-				else if (secondClass == 2 && firstClass == 3 )
+				else if (secondClass == 2 && periodToChange == 3 )
 				{
 				newClass = TextFile.directory.get(studentClassChange).getSecondPeriod();
 				TextFile.directory.get(studentClassChange).setThirdPeriod(newClass);
@@ -196,7 +198,7 @@ public class ChangeVariables
 				TextFile.directory.get(studentClassChange).setSecondPeriod(initialClass);
 				TextFile.directory.get(studentClassChange).setSecondGrade(initialClassGrade);
 				}
-				else if (secondClass == 3 && firstClass == 1) 
+				else if (secondClass == 3 && periodToChange == 1) 
 				{
 				newClass = TextFile.directory.get(studentClassChange).getThirdPeriod();
 				TextFile.directory.get(studentClassChange).setFirstPeriod(newClass);
@@ -206,7 +208,7 @@ public class ChangeVariables
 				TextFile.directory.get(studentClassChange).setThirdPeriod(initialClass);
 				TextFile.directory.get(studentClassChange).setThirdGrade(initialClassGrade);
 				}
-				else if (secondClass == 3 && firstClass == 2)
+				else if (secondClass == 3 && periodToChange == 2)
 				{
 				newClass = TextFile.directory.get(studentClassChange).getThirdPeriod();
 				TextFile.directory.get(studentClassChange).setSecondPeriod(newClass);
