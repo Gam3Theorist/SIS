@@ -2,7 +2,7 @@
 public class gpaCalculator
 	{
 		public static double gpa=0.00;
-		public static String tempGrade;
+		public static String tempGrade = "A";
 		
 		
 		public static void gpaCalculator()

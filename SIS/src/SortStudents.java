@@ -1,66 +1,59 @@
 import java.util.Collections;
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
->>>>>>> b5b2c9da66c4d1b8cb8166be4f43ac89d6d5a7e7
+import java.util.Scanner;
 
 public class SortStudents
 	{
 		// Sort by GPA, sort by last name, sort by period
+		static Scanner userPeriodInput = new Scanner(System.in);
+		static ArrayList<Student> periodPreference = new ArrayList<Student>();
+		
 		public static void sortByGPA()
 		{
+			Collections.sort(TextFile.directory, new GPASorter());
 			System.out.println("The students listed by GPA are:");
+			for (Student s: TextFile.directory)
+				{
+					System.out.printf("%-18s %-12s %-8s %-12s %-8s %-12s %-10s %-4s%n", s.getFirstName() + " " + s.getLastName(), s.getFirstPeriod(), s.getFirstGrade(), 
+							s.getSecondPeriod(), s.getSecondGrade(), s.getThirdPeriod(), s.getThirdGrade(), s.getGpa());
+				}
 		}
-<<<<<<< HEAD
+
 		
 		public static void sortByLastName()
 		{
-			ArrayList<Student> organizedNames = new ArrayList<Student>();
-			organizedNames = TextFile.directory;
+			
+			Collections.sort(TextFile.directory, new NameSorter());
+			
 			System.out.println("The students listed by last name are:");
-			
-			
-			
-			
-			String tempFirstName;
-			for (Student n: organizedNames)
-				{
-					tempFirstName = n.getFirstName();
-					n.setFirstName(n.getLastName());
-					n.setLastName(tempFirstName);
-				}
-			// We need to sort first, then print out sorted names
-			// Collections.sort(TextFile.directory, Student.lastName);
-			// Collections.sort(organizedNames); HOW DOES THIS WORK?
-			
-			
-			
-			
-			
-			
 			System.out.println("Name               Period 1   P1 Grade   Period 2   P2 Grade   Period 3   P3 Grade     GPA");
-			for (Student s: organizedNames)
-=======
-		public static void sortByLastName()
-		{
-			System.out.println("The students listed by last name are:");
-			// We need to sort first, then print out sorted names
-			
-			// Collections.sort(TextFile.directory, Student.lastName);
-			
-			System.out.println("Name               Period 1   P1 Grade   Period 2   P2 Grade   Period 3   P3 Grade     GPA");
-			
 			for (Student s: TextFile.directory)
->>>>>>> b5b2c9da66c4d1b8cb8166be4f43ac89d6d5a7e7
 				{
 					System.out.printf("%-18s %-12s %-8s %-12s %-8s %-12s %-10s %-4s%n", s.getFirstName() + " " + s.getLastName(), s.getFirstPeriod(), s.getFirstGrade(), 
 							s.getSecondPeriod(), s.getSecondGrade(), s.getThirdPeriod(), s.getThirdGrade(), s.getGpa());
 				}
 			
+			// We need to sort first, then print out sorted names
+			// Collections.sort(TextFile.directory, Student.lastName);
+				
 		}
 		public static void sortByPeriod()
 		{
-			System.out.println("The students listed by period are:");
+			System.out.println("Which period would you like to sort by? (1) First Period (2) Second Period (3) Third Period");
+			int periodToOrganize = userPeriodInput.nextInt();
+			if (periodToOrganize == 1)
+				{
+					Collections.sort(TextFile.directory, new PeriodSorter());
+					
+				}
+			else if (periodToOrganize == 2)
+				{
+					
+				}
+			else if (periodToOrganize == 3)
+				{
+					
+				}
 			// alphebatize by period name; within each period, sort by alphebatized last name
 		}
 	}
