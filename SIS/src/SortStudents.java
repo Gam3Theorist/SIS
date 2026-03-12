@@ -17,6 +17,10 @@ public class SortStudents
 					System.out.printf("%-18s %-12s %-8s %-12s %-8s %-12s %-10s %-4s%n", s.getFirstName() + " " + s.getLastName(), s.getFirstPeriod(), s.getFirstGrade(), 
 							s.getSecondPeriod(), s.getSecondGrade(), s.getThirdPeriod(), s.getThirdGrade(), s.getGpa());
 				}
+			
+			
+//loop
+SIS_Runner.runsTheWholeProgram();
 		}
 		public static void sortByLastName()
 		{
@@ -33,7 +37,10 @@ public class SortStudents
 			
 			// We need to sort first, then print out sorted names
 			// Collections.sort(TextFile.directory, Student.lastName);
-				
+			
+			
+//loop
+SIS_Runner.runsTheWholeProgram();
 		}
 		public static void sortByPeriod()
 		{
@@ -52,5 +59,9 @@ public class SortStudents
 					}
 			}
 			// alphabetize by period name; within each period, sort by alphabetized last name
+			
+			
+//loop
+SIS_Runner.runsTheWholeProgram();
 		}
 	}

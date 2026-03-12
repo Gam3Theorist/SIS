@@ -22,60 +22,74 @@ public class SIS_Runner
 				{
 					System.out.println("An I/O error occurred: " + exc.getMessage());
 				}
-				
-				gpaCalculator.gpaCalculator();
-				
-				System.out.println("Welcome to the Student Information System");
 			
-				
-				System.out.println("What would you like to do?");
-				System.out.println("1) add or delete a student");
-				System.out.println("2) change student grades/schedule");
-				System.out.println("3) sort students");
-						
-				
-				selection = masterInput.nextInt();
-				if (selection == 1)
-				{
-					AddingAndDeleting.addingAndDeleting();
-				}
-				else if (selection == 2)
-				{
-					System.out.println("Would you like to (1) Change a student's grade or (2) Change a student's schedule?");
-					changeSelection = masterInput.nextInt();
-					if (changeSelection == 1)
-					{
-						ChangeVariables.changeVariable();
-					}
-					else if (changeSelection == 2)
-					{
-						ChangeVariables.changeClass();
-					}
-					
-				}
-				else if (selection == 3)
-				{
-					int sortSelection;
-					System.out.println("What would you like to do?");
-					System.out.println("(1) Sort students by GPA");
-					System.out.println("(2) Sort students by last name");
-					System.out.println("(3) Sort students by period.");
-					sortSelection = masterInput.nextInt();
-					if (sortSelection == 1)
-						{
-							SortStudents.sortByGPA();
-						}
-					else if (sortSelection == 2)
-						{
-							SortStudents.sortByLastName();
-						}
-					else if (sortSelection == 3)
-						{
-							SortStudents.sortByPeriod();
-						}
-					
-				}
-				
+			
+			
+			System.out.println("Welcome to the Student Information System");
+			
+			//running everything in another program means we are able to use the program again after we use it once.
+			runsTheWholeProgram();
 			}
 
+		
+		
+		public static void runsTheWholeProgram()
+		{
+			
+							
+							gpaCalculator.gpaCalculator();
+							
+							
+						
+							
+							System.out.println("\n\nWhat would you like to do?");
+							System.out.println("1) add or delete a student");
+							System.out.println("2) change student grades/schedule");
+							System.out.println("3) sort students");
+									
+							
+							selection = masterInput.nextInt();
+							if (selection == 1)
+							{
+								AddingAndDeleting.addingAndDeleting();
+							}
+							else if (selection == 2)
+							{
+								System.out.println("Would you like to (1) Change a student's grade or (2) Change a student's schedule?");
+								changeSelection = masterInput.nextInt();
+								if (changeSelection == 1)
+								{
+									ChangeVariables.changeVariable();
+								}
+								else if (changeSelection == 2)
+								{
+									ChangeVariables.changeClass();
+								}
+								
+							}
+							else if (selection == 3)
+							{
+								int sortSelection;
+								System.out.println("What would you like to do?");
+								System.out.println("(1) Sort students by GPA");
+								System.out.println("(2) Sort students by last name");
+								System.out.println("(3) Sort students by period.");
+								sortSelection = masterInput.nextInt();
+								if (sortSelection == 1)
+									{
+										SortStudents.sortByGPA();
+									}
+								else if (sortSelection == 2)
+									{
+										SortStudents.sortByLastName();
+									}
+								else if (sortSelection == 3)
+									{
+										SortStudents.sortByPeriod();
+									}
+								
+							}
+							
+		}
+		
 	}

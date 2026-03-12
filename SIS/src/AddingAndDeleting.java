@@ -33,8 +33,10 @@ public class AddingAndDeleting
 			{
 				//asks for student's data then adds data as a new object 
 				
+				String stupidLittleIdiotPlaceholderBecauseForSomeReasonItDoesntTakeTheFirstInputAndIDontKnowWhySoInsteadOfFixingItIJustAddedThisWeirdOneSoThatTheNormalOnesAllCountAndThisWeirdOneDoesntANDITWORKSIGUESSSOTHATSCOOL=userInput.nextLine();
+				
 				System.out.println("First name:");
-				newFirstName=userInput.nextLine();			
+				newFirstName=userInput.nextLine();							
 				System.out.println("Last name:");
 				newLastName=userInput.nextLine();
 				System.out.println("Period one:");
@@ -51,8 +53,13 @@ public class AddingAndDeleting
 				newThirdGrade=userInput.nextLine();
 				
 
-			//code to add data to a created object, need ArrayList name and name of the class where it is kept
+			//code to add data to a created object
 				TextFile.directory.add(new Student(newFirstName, newLastName, newFirstPeriod, newFirstGrade, newSecondPeriod, newSecondGrade, newThirdPeriod, newThirdGrade, "0.0", 0, 0, 0));
+				PrintDirectory.printDirectory();
+				
+				
+				//loop
+				SIS_Runner.runsTheWholeProgram();
 			}
 			
 	//---------------------------------------------------------------------		
@@ -61,7 +68,17 @@ public class AddingAndDeleting
 			else if(choice==2)
 			{
 //need code that prints out TextFile.directory with numbers and lets the user pick and delete a student by using their number.
-				System.out.println("Select the student you wish to delete.");
+				System.out.println("Select the student you wish to delete.\n");
+				
+				System.out.println("    Name               Period 1   P1 Grade   Period 2   P2 Grade   Period 3   P3 Grade     GPA");
+				
+				for (int i=0; i<TextFile.directory.size();i++)
+					{
+					System.out.print("["+(i+1)+"]");
+						System.out.printf("%-18s %-12s %-8s %-12s %-8s %-12s %-10s %-4s%n", TextFile.directory.get(i).getFirstName() + " " + TextFile.directory.get(i).getLastName(), TextFile.directory.get(i).getFirstPeriod(), TextFile.directory.get(i).getFirstGrade(), 
+								TextFile.directory.get(i).getSecondPeriod(), TextFile.directory.get(i).getSecondGrade(), TextFile.directory.get(i).getThirdPeriod(), TextFile.directory.get(i).getThirdGrade(), TextFile.directory.get(i).getGpa());
+					}
+				
 			
 			int selection = userInput.nextInt();
 	System.out.println("Are you sure you wish to delete "+TextFile.directory.get(selection-1).getFirstName()+" "+TextFile.directory.get(selection-1).getLastName()+"?");
@@ -71,6 +88,11 @@ public class AddingAndDeleting
 			if(doubleSelection==1)
 			{
 		   TextFile.directory.remove(selection-1);
+		   PrintDirectory.printDirectory();
+			
+			
+//loop
+SIS_Runner.runsTheWholeProgram();
 			}
 			else
 			{
@@ -78,14 +100,7 @@ public class AddingAndDeleting
 			}
 				
 			}
-	//-------------------------
-			else
-			{
-				//Just dummy proofing it a little bit.
-				
-				System.out.println("Not an option, try again");
-				addingAndDeleting();
-			}
+	
 			
 		}
 		

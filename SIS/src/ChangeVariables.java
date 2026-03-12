@@ -37,9 +37,9 @@ public class ChangeVariables
 							 for (int i = 0; i < TextFile.directory.size(); i++)
 									{
 										System.out.println(i+1 + ") " +TextFile.directory.get(i).getFirstName() + " " + TextFile.directory.get(i).getLastName() + ":");
-										System.out.println("Period 1: " + TextFile.directory.get(i).getFirstPeriod() + ": " + TextFile.directory.get(studentGradeChange).getFirstGrade());
-										System.out.println("Period 2: " + TextFile.directory.get(i).getSecondPeriod()+ ": " + TextFile.directory.get(studentGradeChange).getSecondGrade());
-										System.out.println("Period 3: " + TextFile.directory.get(i).getThirdPeriod()+ ": " + TextFile.directory.get(studentGradeChange).getThirdGrade());
+										System.out.println("Period 1: " + TextFile.directory.get(i).getFirstPeriod() + ": " + TextFile.directory.get(i).getFirstGrade());
+										System.out.println("Period 2: " + TextFile.directory.get(i).getSecondPeriod()+ ": " + TextFile.directory.get(i).getSecondGrade());
+										System.out.println("Period 3: " + TextFile.directory.get(i).getThirdPeriod()+ ": " + TextFile.directory.get(i).getThirdGrade());
 										System.out.println(" ");
 									}
 							 System.out.println("Enter the number of the student whose grade you wish to change.");
@@ -85,7 +85,7 @@ public class ChangeVariables
 									{
 										TextFile.directory.get(studentGradeChange).setThirdGrade(changeGrade);
 									}
-								System.out.println(TextFile.directory.get(studentGradeChange).getThirdGrade());
+							//	System.out.println(TextFile.directory.get(studentGradeChange).getThirdGrade());
 								System.out.println("The Grade for " + TextFile.directory.get(studentGradeChange).getFirstName() + " " + TextFile.directory.get(studentGradeChange).getLastName() + " is now:");
 								System.out.println("Period 1: " + TextFile.directory.get(studentGradeChange).getFirstPeriod() + ": " + TextFile.directory.get(studentGradeChange).getFirstGrade());
 								System.out.println("Period 2: " + TextFile.directory.get(studentGradeChange).getSecondPeriod() + ": " + TextFile.directory.get(studentGradeChange).getSecondGrade());
@@ -114,7 +114,10 @@ public class ChangeVariables
 					//TextFile.directory.setGrade(newGrade);
 					
 					
-					
+							
+							
+						//loop
+						SIS_Runner.runsTheWholeProgram();
 				}
 			
 			public static void changeClass()
@@ -222,7 +225,10 @@ public class ChangeVariables
 				System.out.println("The schedule for " + TextFile.directory.get(studentClassChange).getFirstName() + " " + TextFile.directory.get(studentClassChange).getLastName() + " is now:");
 				System.out.println("Period 1: " + TextFile.directory.get(studentClassChange).getFirstPeriod() + ": " + TextFile.directory.get(studentClassChange).getFirstGrade());
 				System.out.println("Period 2: " + TextFile.directory.get(studentClassChange).getSecondPeriod() + ": " + TextFile.directory.get(studentClassChange).getSecondGrade());
-				System.out.println("Period 3: " + TextFile.directory.get(studentClassChange).getThirdPeriod() + ": " + TextFile.directory.get(studentClassChange).getThirdGrade());
+				System.out.println("Period 3: " + TextFile.directory.get(studentClassChange).getThirdPeriod() + ": " + TextFile.directory.get(studentClassChange).getThirdGrade());			
+				
+				//loop
+				SIS_Runner.runsTheWholeProgram();
 			}
 		
 	}
