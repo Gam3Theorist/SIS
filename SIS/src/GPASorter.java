@@ -5,12 +5,18 @@ public class GPASorter implements Comparator<Student>
 		
 		public int compare(Student s1, Student s2)
 			{
-			String gpa1;
-			String gpa2;
-			gpa1 = s1.toString();
-			gpa2 = s2.toString();
-						
-			return gpa1.compareTo(gpa2);
+			Double gpa1 = Double.parseDouble(s1.getGpa());
+			Double gpa2 = Double.parseDouble(s2.getGpa());
+		
+			if (gpa1.compareTo(gpa2) == -1)
+			{
+			return 1;
 			}
-
+			else if (gpa1.compareTo(gpa2) == 1)
+			{
+			return -1;
+			}
+			return 1;
+			
 	}
+}

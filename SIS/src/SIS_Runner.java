@@ -24,7 +24,7 @@ public class SIS_Runner
 				}
 				
 				gpaCalculator.gpaCalculator();
-				SortStudents.sortByGPA();
+				
 				System.out.println("Welcome to the Student Information System");
 			
 				

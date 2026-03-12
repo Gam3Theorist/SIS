@@ -9,13 +9,13 @@ public class Student
 		private String secondGrade;
 		private String thirdPeriod;
 		private String thirdGrade;
-		private double gpa;
+		private String gpa;
 		private int periodOneNumber;
 		private int periodTwoNumber;
 		private int periodThreeNumber;
 			
 
-			public Student (String fN, String lN, String fP, String fG, String sP, String sG, String tP, String tG, double g, int pON, int pTN, int pThN)
+			public Student (String fN, String lN, String fP, String fG, String sP, String sG, String tP, String tG, String g, int pON, int pTN, int pThN)
 			{
 				firstName = fN;
 				lastName = lN;
@@ -111,12 +111,12 @@ public class Student
 					this.thirdGrade = thirdGrade;
 				}
 
-			public double getGpa()
+			public String getGpa()
 				{
 					return gpa;
 				}
 
-			public void setGpa(double gpa)
+			public void setGpa(String gpa)
 				{
 					this.gpa = gpa;
 				}

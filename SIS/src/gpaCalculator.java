@@ -1,9 +1,10 @@
+import java.math.RoundingMode;
+import java.math.BigDecimal;
 
 public class gpaCalculator
 	{
 		public static double gpa=0.00;
 		public static String tempGrade = "A";
-		
 		
 		public static void gpaCalculator()
 		{
@@ -17,14 +18,29 @@ for(int i=0; i<TextFile.directory.size();i++)
 	tempGrade=(TextFile.directory.get(i).getThirdGrade());
 	letterToGradeConverter();
 	
-	gpa= gpa/3;
-	TextFile.directory.get(i).setGpa(gpa);
+	// raw GPA as a double
+	gpa = gpa/3;
+	
+	// raw GPA as a BigDecimal
+	BigDecimal rawGPA = new BigDecimal(gpa);
+	
+	// raw GPA rounded to accepted value
+	BigDecimal trueGPA = rawGPA.setScale(2, RoundingMode.HALF_UP);
+	
+	// BigDecimal trueGPA set to double gpa
+	gpa = trueGPA.doubleValue();
+	
+	// The next line formats gpa such that it always has one digit before the decimal and two afterwards
+	String wordGPA = String.format("%.2f", gpa);
+	//gpa = Double.parseDouble(wordGPA);
+	
+	
+	// Final gpa value assigned to student
+	TextFile.directory.get(i).setGpa(wordGPA);
+	
+	// gpa value reset for next student
 	gpa=0.00;
 }
-
-
-
-
 		}
 		
 

@@ -52,7 +52,7 @@ public class AddingAndDeleting
 				
 
 			//code to add data to a created object, need ArrayList name and name of the class where it is kept
-				TextFile.directory.add(new Student(newFirstName, newLastName, newFirstPeriod, newFirstGrade, newSecondPeriod, newSecondGrade, newThirdPeriod, newThirdGrade, 0.0, 0, 0, 0));
+				TextFile.directory.add(new Student(newFirstName, newLastName, newFirstPeriod, newFirstGrade, newSecondPeriod, newSecondGrade, newThirdPeriod, newThirdGrade, "0.0", 0, 0, 0));
 			}
 			
 	//---------------------------------------------------------------------		
